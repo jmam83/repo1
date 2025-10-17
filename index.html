@@ -1,189 +1,169 @@
-// ...existing code...
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hello World — Creativo</title>
-  <style>
-    :root{
-      --bg1:#0f172a; --bg2:#04263b; --glass: rgba(255,255,255,0.06);
-      --accent1:#7b61ff; --accent2:#00d4ff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      display:grid; place-items:center; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: radial-gradient(1000px 600px at 10% 20%, rgba(123,97,255,0.12), transparent),
-                  radial-gradient(800px 500px at 90% 80%, rgba(0,212,255,0.08), transparent),
-                  linear-gradient(120deg,var(--bg1),var(--bg2));
-      overflow:hidden;color:#e6eef8;
-    }
-
-    .card{
-      width:min(920px,92vw); padding: clamp(20px,4vw,48px); border-radius:20px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      box-shadow: 0 8px 40px rgba(2,6,23,0.6);
-      backdrop-filter: blur(8px) saturate(120%);
-      position:relative; overflow:visible;
-    }
-
-    /* Floating soft shapes */
-    .glow{
-      position:absolute; border-radius:50%; filter:blur(70px); opacity:0.9;
-    }
-    .g1{width:420px;height:420px; background:linear-gradient(45deg,var(--accent1),#ff6aa3); left:-120px; top:-140px; transform:rotate(15deg)}
-    .g2{width:300px;height:300px; background:linear-gradient(45deg,var(--accent2),#00ffa8); right:-100px; bottom:-120px; transform:rotate(-10deg)}
-    .g3{width:140px;height:140px; background:linear-gradient(45deg,#ffd97a,#ff7ab6); left:40%; top:-60px; opacity:0.35}
-
-    .content{position:relative; z-index:2; display:flex; gap:24px; align-items:center; flex-wrap:wrap}
-    .left{flex:1; min-width:260px}
-    h1{
-      font-size: clamp(36px,6.5vw,76px); line-height:0.95; margin-bottom:8px;
-      background: linear-gradient(90deg,var(--accent1),var(--accent2),#ffd97a);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 6px 30px rgba(5,8,20,0.6);
-      letter-spacing: -0.02em;
-      cursor:pointer;
-      transition: transform .22s ease;
-      display:inline-block;
-    }
-    h1:active{transform:translateY(3px) scale(.995)}
-
-    p.lead{color:rgba(230,238,248,0.82); opacity:0.95; font-size:1.05rem}
-
-    .meta{margin-top:16px; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-    .btn{
-      background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
-      border:1px solid rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px;
-      color:inherit; cursor:pointer; font-weight:600; transition:transform .15s ease,box-shadow .15s;
-    }
-    .btn:active{transform:translateY(2px)}
-    .small{font-size:.9rem;color:rgba(230,238,248,0.7)}
-
-    /* Animated underline */
-    .underline{
-      height:6px; border-radius:6px; margin-top:14px;
-      background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      width:0; transition:width .9s cubic-bezier(.2,.9,.2,1);
-      box-shadow:0 8px 24px rgba(59,53,161,0.24);
-    }
-
-    /* Right preview */
-    .preview{
-      width:320px; min-width:200px; aspect-ratio:1.2/1; border-radius:14px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      display:flex; align-items:center; justify-content:center; color:inherit;
-      box-shadow: inset 0 -6px 18px rgba(0,0,0,0.25);
-    }
-
-    .monogram{
-      font-weight:800; font-size:48px; letter-spacing:-0.02em;
-      background: conic-gradient(from 180deg,var(--accent1),var(--accent2),#ffd97a,#ff7ab6);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));
-    }
-
-    /* Confetti pieces */
-    .confetti{
-      position:fixed; pointer-events:none; z-index:9999;
-      will-change:transform,opacity;
-      width:10px; height:14px; border-radius:2px;
-    }
-
-    @media (max-width:720px){
-      .content{flex-direction:column-reverse; align-items:stretch}
-      .preview{width:100%; aspect-ratio:16/6}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Alejandro Torres</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        h1 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .skills {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skills li {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .profile-pic {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .header {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div class="card" role="main" aria-labelledby="title">
-    <div class="glow g1" aria-hidden="true"></div>
-    <div class="glow g2" aria-hidden="true"></div>
-    <div class="glow g3" aria-hidden="true"></div>
-
-    <div class="content">
-      <div class="left">
-        <h1 id="title" tabindex="0" title="Haz click para celebrar">Hello, World!</h1>
-        <p class="lead">Un vistazo creativo al clásico "Hello World". Haz click en el texto para lanzar confeti, o usa el botón para cambiar el saludo.</p>
-
-        <div class="meta">
-          <button class="btn" id="toggleBtn" aria-pressed="false">Cambiar a "Hola Mundo"</button>
-          <button class="btn" id="celebrate">Celebrar ✨</button>
-          <div class="small">Diseño: degradados, vidrio y animación ligera</div>
+    <div class="container">
+        <div class="header">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Foto de Alejandro Torres" class="profile-pic">
+            <h1>Alejandro Torres</h1>
+        </div>
+        <div class="contact-info">
+            <div>
+                <p><strong>Email:</strong> alejandro.torres@email.com</p>
+                <p><strong>Teléfono:</strong> +34 666 555 444</p>
+            </div>
+            <div>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/alejandrotorres</p>
+                <p><strong>GitHub:</strong> github.com/alejandrotorres</p>
+                <p><strong>Portfolio:</strong> alejandrotorres.com</p>
+            </div>
         </div>
 
-        <div class="underline" id="underline"></div>
-      </div>
+        <div class="section">
+            <h2>Resumen</h2>
+            <p>Desarrollador de software senior con 5+ años de experiencia impulsando la innovación a través de código limpio y soluciones creativas. Especializado en el desarrollo full-stack con un enfoque en la creación de aplicaciones web y móviles escalables, eficientes y centradas en el usuario. Busco un rol desafiante donde pueda aplicar mis habilidades técnicas, liderazgo y pasión por la tecnología para superar las expectativas y contribuir al éxito de una empresa líder en el sector tecnológico.</p>
+        </div>
 
-      <div class="preview" aria-hidden="true">
-        <div class="monogram">HW</div>
-      </div>
+        <div class="section">
+            <h2>Experiencia Laboral</h2>
+            <h3>Ingeniero de Software Senior - Tech Solutions S.A.</h3>
+            <p><em>Madrid, España (2018 - Presente)</em></p>
+            <ul>
+                <li>Lideré el desarrollo front-end de una nueva plataforma de comercio electrónico, resultando en un aumento del 30% en la tasa de conversión en el primer trimestre.</li>
+                <li>Implementé soluciones de optimización de rendimiento que redujeron los tiempos de carga de la página en un 40%, mejorando significativamente la experiencia del usuario.</li>
+                <li>Dirigí un equipo de 4 desarrolladores junior, proporcionando mentoría y apoyo técnico para asegurar la entrega exitosa de proyectos complejos.</li>
+                <li>Colaboré estrechamente con los equipos de producto y diseño para traducir las necesidades del negocio en soluciones técnicas innovadoras y eficientes.</li>
+                <li>Contribuí activamente en la definición de la arquitectura de la aplicación y en la implementación de las mejores prácticas de desarrollo, incluyendo la integración continua y la entrega continua (CI/CD).</li>
+            </ul>
+
+            <h3>Desarrollador Junior - InnovaTech SL</h3>
+            <p><em>Barcelona, España (2016 - 2018)</em></p>
+            <ul>
+                <li>Desarrollé nuevas funcionalidades para aplicaciones web utilizando Angular y TypeScript, contribuyendo a la mejora de la funcionalidad y la usabilidad de las aplicaciones.</li>
+                <li>Participé activamente en la resolución de bugs y en la optimización del rendimiento de las aplicaciones, mejorando la estabilidad y la eficiencia del software.</li>
+                <li>Colaboré en el diseño de la arquitectura de la aplicación y en la implementación de buenas prácticas de desarrollo, aprendiendo de desarrolladores senior y contribuyendo al crecimiento del equipo.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Educación</h2>
+            <h3>Máster en Ingeniería de Software - Universidad Politécnica de Madrid</h3>
+            <p><em>Madrid, España (2014 - 2016)</em></p>
+            <p>Tesis: "Optimización de Algoritmos de Búsqueda en Grandes Conjuntos de Datos".</p>
+
+            <h3>Grado en Ingeniería Informática - Universidad de Barcelona</h3>
+            <p><em>Barcelona, España (2010 - 2014)</em></p>
+        </div>
+
+        <div class="section">
+            <h2>Proyectos Personales</h2>
+            <ul>
+                <li><strong>Open Source Contribution:</strong> Contribuciones al proyecto [Nombre del proyecto] en GitHub, resolviendo issues y agregando nuevas funcionalidades.</li>
+                <li><strong>[Nombre del Proyecto Personal]:</strong> Desarrollo de una aplicación móvil para [Descripción breve de la aplicación] utilizando React Native. Disponible en [Enlace al repositorio o a la tienda de aplicaciones].</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades</h2>
+            <ul class="skills">
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>TypeScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>SQL</li>
+                <li>Git</li>
+                <li>Docker</li>
+                <li>AWS</li>
+                <li>Azure</li>
+                <li>CI/CD</li>
+                <li>Testing (Unit, Integration, E2E)</li>
+                <li>Metodologías ágiles (Scrum, Kanban)</li>
+                <li>Microservicios</li>
+                <li>GraphQL</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Idiomas</h2>
+            <p>Español (Nativo)</p>
+            <p>Inglés (C1 - Avanzado) - Certificado TOEFL iBT: 110/120</p>
+        </div>
+
+        <div class="section">
+            <h2>Premios y Reconocimientos</h2>
+            <ul>
+                <li>Premio a la Innovación - Tech Solutions S.A. (2021)</li>
+                <li>Reconocimiento al Mejor Desempeño - InnovaTech SL (2017)</li>
+            </ul>
+        </div>
     </div>
-  </div>
-
-  <script>
-    // Texto interactivo y confetti simple
-    const title = document.getElementById('title');
-    const toggle = document.getElementById('toggleBtn');
-    const celebrate = document.getElementById('celebrate');
-    const underline = document.getElementById('underline');
-    let isHola = false;
-
-    // animate underline on load
-    requestAnimationFrame(()=> underline.style.width = '48%');
-
-    function spawnConfetti(x = innerWidth/2, y = innerHeight/2, count = 30){
-      const colors = ['#7b61ff','#00d4ff','#ffd97a','#ff7ab6','#6be08a'];
-      for(let i=0;i<count;i++){
-        const el = document.createElement('div');
-        el.className = 'confetti';
-        el.style.background = colors[Math.floor(Math.random()*colors.length)];
-        el.style.left = (x - 5 + (Math.random()-0.5)*80) + 'px';
-        el.style.top = (y - 7 + (Math.random()-0.5)*40) + 'px';
-        el.style.transform = `translate3d(0,0,0) rotate(${Math.random()*360}deg)`;
-        document.body.appendChild(el);
-
-        const vx = (Math.random()-0.5)*10;
-        const vy = -6 - Math.random()*10;
-        const rot = (Math.random()-0.5)*720;
-
-        // animate using requestAnimationFrame
-        let t=0;
-        const dur = 1200 + Math.random()*700;
-        const start = performance.now();
-        function frame(now){
-          t = now - start;
-          const p = Math.min(1, t/dur);
-          el.style.transform = `translate3d(${vx * p * 40}px, ${vy * p * 80 + 0.5* (p*p) * 300}px,0) rotate(${rot * p}deg)`;
-          el.style.opacity = String(1 - p);
-          if(p < 1) requestAnimationFrame(frame);
-          else el.remove();
-        }
-        requestAnimationFrame(frame);
-      }
-    }
-
-    title.addEventListener('click', (e)=> spawnConfetti(e.clientX, e.clientY, 40));
-    celebrate.addEventListener('click', ()=> spawnConfetti(innerWidth/2, innerHeight/2, 60));
-
-    toggle.addEventListener('click', ()=>{
-      isHola = !isHola;
-      title.textContent = isHola ? '¡Hola, Mundo!' : 'Hello, World!';
-      toggle.textContent = isHola ? 'Cambiar a "Hello World"' : 'Cambiar a "Hola Mundo"';
-      toggle.setAttribute('aria-pressed', String(isHola));
-      // playful bounce
-      title.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}], {duration:360, easing:'cubic-bezier(.2,.9,.2,1)'});
-    });
-
-    // keyboard accessibility: press Enter on title to celebrate
-    title.addEventListener('keydown', (e)=> {
-      if(e.key === 'Enter' || e.key === ' ') {
-        spawnConfetti(title.getBoundingClientRect().left + title.offsetWidth/2, title.getBoundingClientRect().top + title.offsetHeight/2, 36);
-      }
-    });
-  </script>
 </body>
 </html>
-// ...existing code...
